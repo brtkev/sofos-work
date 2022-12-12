@@ -1,6 +1,6 @@
 using { sap.petition as my } from '../db/schema';
 
-@path: 'service/petitions'
+@requires: 'authenticated-user'
 service PetitionService {
     entity Petitions as projection on my.Petitions;
     entity Departments as projection on my.Departments;

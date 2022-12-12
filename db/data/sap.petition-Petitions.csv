@@ -1,3 +1,2 @@
-title;description;materials;department_ID
-Windows;We need materials for simple windows;[{"name" : "glue", "count" : 5},{"name" : "wood", "count" : 100},{"name" : "glass", "count" : 50}];5b592069-6577-46fb-b30f-7656c9013200
-Doors;We run out of wood;[{"name" : "wood", "count" : 300}];5b592069-6577-46fb-b30f-7656c9013300
+ID;title;description;materials;department_ID
+51641f65-e5a4-4edc-8c83-5c7effc2925c;Doors;We run out of wood;[{"name" : "wood", "count" : 300}];5b592069-6577-46fb-b30f-7656c9013300

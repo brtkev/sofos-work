@@ -9,7 +9,31 @@
       "name": "cds run",
       "request": "launch",
       "type": "node-terminal",
-      "skipFiles": [ "<node_internals>/**" ]
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Run sofos-work-2",
+      "request": "launch",
+      "type": "pwa-node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npx",
+      "args": [
+        "cds",
+        "run",
+        "--in-memory?"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "envFile": "${workspaceFolder}/.env2",
+      "env": {
+        "NODE_ENV": "development",
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/sofos-work\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+      }
     }
   ]
 }
