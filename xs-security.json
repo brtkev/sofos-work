@@ -1,0 +1,8 @@
+{
+  "scopes": [],
+  "attributes": [],
+  "role-templates": [],
+  "oauth2-configuration": {
+    "redirect-uris": ["https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/login/callback"]
+    }
+}

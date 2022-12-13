@@ -22,7 +22,8 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: petition-api-db
+      - name: hana1
+      - name: petition-api-auth
 
   - name: petition-api-db-deployer
     type: hdb
@@ -30,11 +31,36 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: petition-api-db
+      - name: hana1
+
+  - name: petition-api
+    type: approuter.nodejs
+    path: app/ # from cds.env.folders. Consider also cds.env.build.target -> gen/app
+    parameters:
+      keep-existing-routes: true
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+      - name: petition-api-auth
 
 resources:
-  - name: petition-api-db
+  - name: hana1
     type: com.sap.xs.hdi-container
     parameters:
-      service: hanatrial
+      service: hana
       service-plan: hdi-shared
+  - name: petition-api-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: petition-api-${org}-${space}
+        tenant-mode: dedicated
