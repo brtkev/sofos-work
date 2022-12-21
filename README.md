@@ -25,7 +25,7 @@ File or Folder | Purpose
 Learn more at https://cap.cloud.sap/docs/get-started/.
 
 
-### walkthrough
+# walkthrough
 
 ## step 0
 
@@ -35,7 +35,7 @@ terminal
 ```
     cds add mta, approuter, xsuaa, hana 
 ```
-ref - https://cap.cloud.sap/docs/guides/deployment/to-cf
+[ref](https://cap.cloud.sap/docs/guides/deployment/to-cf) - https://cap.cloud.sap/docs/guides/deployment/to-cf
 
 ./srv/server.js
 ```
