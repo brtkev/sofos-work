@@ -50,7 +50,8 @@ habilitamos cors en express, es importante para que appgyver pueda consumir el s
 ## step 1
 
 Service authentication
-ref - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy
+
+ref[https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy] - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy
 
 ./xs-security.json
 ```
