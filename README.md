@@ -35,7 +35,7 @@ terminal
 ```
     cds add mta, approuter, xsuaa, hana 
 ```
-[ref](https://cap.cloud.sap/docs/guides/deployment/to-cf) - https://cap.cloud.sap/docs/guides/deployment/to-cf
+ref - [pre deploy](https://cap.cloud.sap/docs/guides/deployment/to-cf)
 
 ./srv/server.js
 ```
@@ -51,7 +51,7 @@ habilitamos cors en express, es importante para que appgyver pueda consumir el s
 
 Service authentication
 
-ref[https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy] - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy
+ref - [Authentication](https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy)
 
 ./xs-security.json
 ```
@@ -88,8 +88,8 @@ necesitamos un scope para los usuarios authenticados y un role template para el 
 
 "authenticationType": "basic" es importante para que el servicio funcione con basic authentication
 ref 
-    - https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/c103fb414988447ead2023f768096dcc.html
-    - https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/666eb55032d849beabb906b18712509b.html
+    - [xs-app](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/c103fb414988447ead2023f768096dcc.html)
+    - [routes](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/666eb55032d849beabb906b18712509b.html)
 
 
 
@@ -110,7 +110,7 @@ el resto es parte del servicio que estemos creando actualmente
 ## step 2 
 
 Service autorization
-ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
+ref - [autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy)
 
 ./xs-security.json
 ```
@@ -203,7 +203,7 @@ Ahora podemos Agregar las restricciones que queramos:
 ## step 3
 
 ambientes de production vs development 
-ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
+ref - [autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy)
 
 ./package.json
 ```
@@ -257,7 +257,7 @@ agregamos esto, eliminamos los comentarios al agregarlo ya que .json no permite 
 
 en la seccion auth.development podemos ver que la estrategia es mock y tenemos algunos usuarios de prueba
 
-podemos proceder a
+podemos proceder a development
 terminal
 ```
     cds watch
@@ -266,12 +266,9 @@ y ahora podemos consumir el servicio como uno de los usuarios mock, solo poniend
 dentro del localhost que se abrio
 
 
-## step 4 
+## step 4 - deployment
 
-deployment
-
-ref - https://cap.cloud.sap/docs/guides/deployment/to-cf
-
+ref - [deploy](https://cap.cloud.sap/docs/guides/deployment/to-cf)
 
 ./deploy.sh
 ```
@@ -290,11 +287,9 @@ chmod 701 deploy.sh  # agrega todos los permisos al archivo, solo es necesario u
 ```
 
 
-## step 5
+## step 5 - troubleshooting
 
-troubleshooting
-
-# falta de login
+### falta de login
 
 terminal
 ```
@@ -307,7 +302,7 @@ o
     cf login 
 ```
 
-# db deploy trouble
+### db deploy trouble
 
 ./package.json
 ```
@@ -317,9 +312,9 @@ o
         }
     }
 ```
-ref - https://answers.sap.com/questions/13500726/cap-db-deployer-start-crached.html
+ref - [cap-db-deployer-start-crached](https://answers.sap.com/questions/13500726/cap-db-deployer-start-crached.html)
 
-# Error deployment to container my-hdi-container failed - error: HDI make failed [Deployment ID: none]
+### Error deployment to container my-hdi-container failed - error: HDI make failed [Deployment ID: none]
 
 ./db/undeploy.json
 ```
@@ -328,9 +323,9 @@ ref - https://answers.sap.com/questions/13500726/cap-db-deployer-start-crached.h
     "src/gen/**/*.csv"
     ]
 ```
-ref - https://answers.sap.com/questions/13750791/error-deployment-to-container-my-hdi-container-fai.html
+ref - [error-deployment-to-container-my-hdi-container](https://answers.sap.com/questions/13750791/error-deployment-to-container-my-hdi-container-fai.html)
 
-# step 6
+## step 6
 
 BTP user roles
 
@@ -346,5 +341,5 @@ y save para terminar.
 
 Listo ahora el usuario que asignamos podra consumir el servicio de la manera que queramos.
 
-ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
+ref - [roles y autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy)
 
