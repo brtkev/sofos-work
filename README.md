@@ -32,17 +32,17 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 pre deploy setup
 
 terminal
-´´´
+```
     cds add mta, approuter, xsuaa, hana 
-´´´
+```
 ref - https://cap.cloud.sap/docs/guides/deployment/to-cf
 
 ./srv/server.js
-´´´
+```
     const cors  = require('cors');
     const cds = require ('@sap/cds')
     cds.on('bootstrap', app => app.use(cors()))
-´´´
+```
 
 habilitamos cors en express, es importante para que appgyver pueda consumir el servicio sin errores
 
@@ -73,7 +73,7 @@ ref - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fq
 necesitamos un scope para los usuarios authenticados y un role template para el token exchange
 
 ./app/xs-app.json
-´´´
+```
     "routes":[
     {
         "source": "^/(.*)$",
@@ -83,7 +83,7 @@ necesitamos un scope para los usuarios authenticados y un role template para el 
         "scope" : "$XSAPPNAME.Employee"
     },
     ....
-´´´
+```
 
 "authenticationType": "basic" es importante para que el servicio funcione con basic authentication
 ref 
@@ -94,7 +94,7 @@ ref
 
 y ahora podemos pedir usuarios authenticados para consumir el servicio con : @(requires: 'authenticated-user')
 ./srv/petition-service.cds
-´´´
+```
     service PetitionService 
     @(path: '/service')
     @(requires: 'authenticated-user') //------------enfacis en esta linea-------------------
@@ -102,7 +102,7 @@ y ahora podemos pedir usuarios authenticados para consumir el servicio con : @(r
         entity Petition as projection on my.Petitions;
         ...
     }
-´´´
+```
 el resto es parte del servicio que estemos creando actualmente
 
 
@@ -112,7 +112,7 @@ Service autorization
 ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
 
 ./xs-security.json
-´´´
+```
     "scopes": [
         {
         "name": "uaa.user",
@@ -127,11 +127,11 @@ ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
         "description":"Manager"
         }
     ],
-´´´
+```
 agregamos nuevos roles a nuestro scope
 
 ./xs-security.json
-´´´
+```
     "role-templates":[
         {
         "name": "Token_Exchange",
@@ -153,11 +153,11 @@ agregamos nuevos roles a nuestro scope
         ]
         }
     ],
-´´´
+```
 agregamos role-templates correspondientes a los scopes
 
 ./xs-security.json
-´´´
+```
     "role-collections": [
         {
         "name" : "petition_Employee",
@@ -174,14 +174,14 @@ agregamos role-templates correspondientes a los scopes
         ]
         }
     ],
-´´´
+```
 y agregamos role-collections correspondientes a los role-templates
 
 todo esto es necesario para poder asignar roles en el BTP
 
 Ahora podemos Agregar las restricciones que queramos:
 ./srv/petition-service.cds
-´´´
+```
     service PetitionService 
     @(path: '/service')
     @(requires: 'authenticated-user')
@@ -197,7 +197,7 @@ Ahora podemos Agregar las restricciones que queramos:
             ])
             as projection on my.Petitions;
     ...
-´´´
+```
 
 ## step 3
 
@@ -205,7 +205,7 @@ ambientes de production vs development
 ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
 
 ./package.json
-´´´
+```
     "cds": {
         "requires": {
             "uaa":{
@@ -251,16 +251,16 @@ ref - https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy
             }
         }
     },
-´´´
+```
 agregamos esto, eliminamos los comentarios al agregarlo ya que .json no permite comentarios
 
 en la seccion auth.development podemos ver que la estrategia es mock y tenemos algunos usuarios de prueba
 
 podemos proceder a
 terminal
-´´´
+```
     cds watch
-´´´
+```
 y ahora podemos consumir el servicio como uno de los usuarios mock, solo poniendo el nombre y sin contraseña
 dentro del localhost que se abrio
 
@@ -273,20 +273,20 @@ ref - https://cap.cloud.sap/docs/guides/deployment/to-cf
 
 
 ./deploy.sh
-´´´
+```
     #!bin/bash
 
     cds build --production
     mbt build -t gen --mtar mta.tar  
     cf deploy gen/mta.tar
-´´´
+```
 agregamos los comandos para hacer deploy y ahora podemos usar el archivo para hacer deploy satisfactoriamente
 
 terminal
-´´´
+```
 chmod 701 deploy.sh  # agrega todos los permisos al archivo, solo es necesario usar una vez
 ./deploy.sh
-´´´
+```
 
 
 ## step 5
@@ -296,37 +296,37 @@ troubleshooting
 # falta de login
 
 terminal
-´´´
+```
     cf login --sso
-´´´
+```
 
 o
 
-´´´
+```
     cf login 
-´´´
+```
 
 # db deploy trouble
 
 ./package.json
-´´´
+```
     "cds":{
         "hana": {
             "deploy-format": "hdbtable"
         }
     }
-´´´
+```
 ref - https://answers.sap.com/questions/13500726/cap-db-deployer-start-crached.html
 
 # Error deployment to container my-hdi-container failed - error: HDI make failed [Deployment ID: none]
 
 ./db/undeploy.json
-´´´
+```
     [
     "src/gen/**/*.hdbtabledata",
     "src/gen/**/*.csv"
     ]
-´´´
+```
 ref - https://answers.sap.com/questions/13750791/error-deployment-to-container-my-hdi-container-fai.html
 
 # step 6
