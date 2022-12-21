@@ -23,3 +23,8 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+
+### cap authentication guide
+    - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy
+

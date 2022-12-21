@@ -21,16 +21,46 @@
   },
   "cds": {
     "requires": {
-      "db": {
-        "kind": "hana-cloud"
+      "uaa":{
+        "kind": "xsuaa"
       },
-      "[production]": {
-        "auth": {
-          "kind": "xsuaa"
+      "db": {
+        "[production]":{
+          "kind":"hana"
         },
-        "approuter": {
-          "kind": "cloudfoundry"
+        "[development]" :{
+          "kind":"sqlite"
         }
+        
+      },
+      "auth": {
+        "[production]":{
+          "strategy" : "JWT"
+        },
+        "[development]" :{
+          "strategy": "mock",
+          "users":{
+            "joe":{
+              "roles": [
+                "Employee"
+              ]
+            },
+            "julie":{
+              "roles": [
+                "Employee"
+              ]
+            },
+            "bob":{
+              "roles": [
+                "Employee",
+                "Manager"
+              ]
+            }
+          }
+        }
+      },
+      "approuter": {
+        "kind": "cloudfoundry"
       }
     },
     "hana": {

@@ -6,12 +6,13 @@ type Set {
     count : Integer
 }
 
-entity Petitions : managed, cuid {
+entity Petitions : managed, cuid  {
     title         : String(100);
     description   : String;
     department    : Association to Departments;
     materials     : many Set
 }
+
 
 entity Departments : cuid {
     name : String(100);
