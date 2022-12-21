@@ -53,7 +53,7 @@ Service authentication
 ref - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fqvHrYXd5oN&index=7&ab_channel=SAPHANAAcademy
 
 ./xs-security.json
-´´´
+```
     "scopes": [
     {
       "name": "uaa.user",
@@ -68,7 +68,7 @@ ref - https://www.youtube.com/watch?v=ywwbPIRnMBM&list=PLkzo92owKnVwQ-0oT78691fq
         "uaa.user"
       ]
     },
-´´´
+```
 
 necesitamos un scope para los usuarios authenticados y un role template para el token exchange
 
