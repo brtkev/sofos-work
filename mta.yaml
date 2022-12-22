@@ -10,9 +10,9 @@ build-parameters:
       commands:
         - npm install --production
         - npx -p @sap/cds-dk cds build --production
-        
+
 modules:
-#------------------ service --------------------
+  #------------------ service --------------------
   - name: petition-api-srv
     type: nodejs
     path: gen/srv
@@ -27,8 +27,19 @@ modules:
     requires:
       - name: hana1
       - name: petition-api-auth
+    properties:
+      CORS:
+        - uriPattern: .
+          allowedMethods:
+            - GET
+            - POST
+            - PATCH
+            - UPDATE
+            - DELETE
+          allowedOrigin:
+            - host: '*'
 
-#------------------ db --------------------
+  #------------------ db --------------------
   - name: petition-api-db-deployer
     type: hdb
     path: gen/db
@@ -37,7 +48,7 @@ modules:
     requires:
       - name: hana1
 
-#------------------ app router --------------------
+  #------------------ app router --------------------
   - name: petition-api
     type: approuter.nodejs
     path: app/ # from cds.env.folders. Consider also cds.env.build.target -> gen/app
@@ -60,7 +71,7 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
-#------------------ auth --------------------
+  #------------------ auth --------------------
   - name: petition-api-auth
     type: org.cloudfoundry.managed-service
     parameters:

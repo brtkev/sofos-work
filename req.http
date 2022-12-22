@@ -11,3 +11,11 @@ Authorization:  Basic bob:
 ###
 https://05e02d6ctrial.authentication.us10.hana.ondemand.com
 Authorization: Basic sb-petition-api-05e02d6ctrial-dev!t123606:2aSszrgUBI7kt58NHuJcGf12sgM=
+
+###
+https://05e02d6ctrial-dev-petition-api-srv.cfapps.us10-001.hana.ondemand.com/service/userInfo()
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+
+###
+https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/userInfo()
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.

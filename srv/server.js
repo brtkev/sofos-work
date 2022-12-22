@@ -1,4 +1,9 @@
 const cors  = require('cors');
-
 const cds = require ('@sap/cds')
-cds.on('bootstrap', app => app.use(cors()))
+
+cds.on('bootstrap', async app => {
+    app.use(cors())
+})
+
+
+module.exports = cds.server;

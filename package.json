@@ -21,36 +21,35 @@
   },
   "cds": {
     "requires": {
-      "uaa":{
+      "uaa": {
         "kind": "xsuaa"
       },
       "db": {
-        "[production]":{
-          "kind":"hana"
+        "[production]": {
+          "kind": "hana"
         },
-        "[development]" :{
-          "kind":"sqlite"
+        "[development]": {
+          "kind": "sqlite"
         }
-        
       },
       "auth": {
-        "[production]":{
-          "strategy" : "JWT"
+        "[production]": {
+          "strategy": "JWT"
         },
-        "[development]" :{
+        "[development]": {
           "strategy": "mock",
-          "users":{
-            "joe":{
+          "users": {
+            "joe": {
               "roles": [
                 "Employee"
               ]
             },
-            "julie":{
+            "julie": {
               "roles": [
                 "Employee"
               ]
             },
-            "bob":{
+            "bob": {
               "roles": [
                 "Employee",
                 "Manager"
@@ -61,6 +60,14 @@
       },
       "approuter": {
         "kind": "cloudfoundry"
+      },
+      "[production]": {
+        "auth": {
+          "kind": "xsuaa"
+        },
+        "approuter": {
+          "kind": "cloudfoundry"
+        }
       }
     },
     "hana": {
