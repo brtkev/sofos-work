@@ -34,21 +34,8 @@ service PetitionService
             }
         ])
         as Projection on my.Orders;
+
+
+    type userRoles {idetified : Boolean; authenticated: Boolean; Employee: Boolean; Manager: Boolean}
+    function userInfo() returns {user: String; roles : userRoles};
 }
-
-// service BasicService{
-//     entity Petition as projection on my.Petitions;
-//     entity Departments as projection on my.Departments;
-//     entity Orders as Projection on my.Orders;
-// }
-
-// service EmployeeService @(requires: 'Employee'){
-//     @insertonly entity Petition as projection on my.Petitions;
-//     @readonly entity Departments as projection on my.Departments;
-// }
-
-// service ManagerService @(requires: 'Manager'){
-//     entity Petition as projection on my.Petitions;
-//     entity Departments as projection on my.Departments;
-//     entity Orders as Projection on my.Orders;
-// }

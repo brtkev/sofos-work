@@ -1,4 +1,3 @@
-#!bin/bash
 
 cds build --production
 mbt build -t gen --mtar mta.tar  
