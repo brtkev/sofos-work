@@ -87,6 +87,7 @@ necesitamos un scope para los usuarios authenticados y un role template para el 
 ```
 
 "authenticationType": "basic" es importante para que el servicio funcione con basic authentication
+
 ref 
     - [xs-app](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/c103fb414988447ead2023f768096dcc.html)
     - [routes](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/666eb55032d849beabb906b18712509b.html)
@@ -110,6 +111,7 @@ el resto es parte del servicio que estemos creando actualmente
 ## step 2 
 
 Service autorization
+
 ref - [autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy)
 
 ./xs-security.json
@@ -324,6 +326,21 @@ ref - [cap-db-deployer-start-crached](https://answers.sap.com/questions/13500726
     ]
 ```
 ref - [error-deployment-to-container-my-hdi-container](https://answers.sap.com/questions/13750791/error-deployment-to-container-my-hdi-container-fai.html)
+
+## redirect failed after login
+
+Copiamos el Link de nuestro app router
+
+./xs-secuirty
+```
+    "oauth2-configuration": {
+        "redirect-uris": [
+        "https://{AppRouterLink}/login/callback"
+        ]
+    }
+```
+es necesario hacer deploy nuevamente
+
 
 ## step 6
 
