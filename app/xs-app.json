@@ -14,5 +14,25 @@
       "authenticationType": "basic",
       "scope": "$XSAPPNAME.Employee"
     }
-  ]
+  ],
+  "cors":[
+    {
+      "uriPattern": "^/(.*)$",
+      "allowedMethods": [
+        "GET", "POST"
+      ],
+      "allowedOrigin": [
+        {
+          "host": "*",
+          "protocol": "https"
+        }
+      ],
+      "maxAge": 3600,
+      "allowedHeaders": [
+        "Authorization",
+        "Content-Type"
+      ],
+      "allowedCredentials": true
+    }
+  ] 
 }

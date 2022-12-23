@@ -75,6 +75,7 @@
     }
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "build":  "cds build"
   }
 }

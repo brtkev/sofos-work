@@ -24,20 +24,19 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
+          CORS:
+            - uriPattern: .
+              allowedMethods:
+                - GET
+                - POST
+                - PATCH
+                - UPDATE
+                - DELETE
+              allowedOrigin:
+                - host: '*'
     requires:
       - name: hana1
       - name: petition-api-auth
-    properties:
-      CORS:
-        - uriPattern: .
-          allowedMethods:
-            - GET
-            - POST
-            - PATCH
-            - UPDATE
-            - DELETE
-          allowedOrigin:
-            - host: '*'
 
   #------------------ db --------------------
   - name: petition-api-db-deployer
