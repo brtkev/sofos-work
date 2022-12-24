@@ -56,6 +56,7 @@ modules:
       disk-quota: 256M
       memory: 256M
     requires:
+      - name: html5_repo_runtime
       - name: srv-api
         group: destinations
         properties:
@@ -80,3 +81,9 @@ resources:
       config:
         xsappname: petition-api-${org}-${space}
         tenant-mode: dedicated
+  #----------------- html runtime ------------------
+  - name: html5_repo_runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo

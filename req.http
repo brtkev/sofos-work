@@ -3,19 +3,75 @@ http://localhost:4004/service/Petition
 ###
 http://localhost:4004/service/Petition
 Authorization: Basic bob:
-###
-https://05e02d6ctrial-dev-petition-api-srv.cfapps.us10-001.hana.ondemand.com/service/Petition
-Authorization:  Basic bob:
-
 
 ###
-https://05e02d6ctrial.authentication.us10.hana.ondemand.com
-Authorization: Basic sb-petition-api-05e02d6ctrial-dev!t123606:2aSszrgUBI7kt58NHuJcGf12sgM=
+POST http://localhost:4004/service/Petition
+Authorization: Basic bob:
+Content-Type: application/json
+
+{
+    "title": "test2"
+}
 
 ###
-https://05e02d6ctrial-dev-petition-api-srv.cfapps.us10-001.hana.ondemand.com/service/userInfo()
+GET http://localhost:4004/service/Departments
+Authorization: Basic bob:
+
+###
+POST http://localhost:4004/service/Departments
+Authorization: Basic bob:
+Content-Type: application/json
+
+{
+    "name": "deparment test2"
+}
+
+
+
+
+
+###
+GET https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Petition
 Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
 
 ###
-https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/userInfo()
+GET https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Departments
 Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+
+
+###
+POST https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Petition
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+Content-Type: application/json
+
+{
+    "title": "test4",
+    "description": "description test1",
+    "department_ID": "0a9b21f8-4ff9-4242-a59d-441d466c6a2d",
+    "materials": [
+        {
+            "name": "clavos",
+            "count": 4
+        }
+    ]
+}
+
+###
+DELETE https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Petition(84d0c615-7153-4314-89ac-09a415594649)
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+
+
+### get order
+GET https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Orders
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+
+### post order
+POST https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Orders
+Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+Content-Type: application/json
+
+{
+    "title": "some title",
+    "material_name": "coco",
+    "material_count": 5
+}

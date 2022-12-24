@@ -8,7 +8,7 @@ service PetitionService
     entity Petition 
         @(restrict: [
             {
-                grant: ['READ'], to: 'Manager'
+                grant: ['*'], to: 'Manager'
             },
             {
                 grant: ['WRITE'], to: 'Employee'
@@ -22,7 +22,7 @@ service PetitionService
                     grant: ['READ'], to: 'Employee'
                 },
                 {
-                    grant: ['WRITE'], to: 'Manager'
+                    grant: ['*'], to: 'Manager'
                 }
             ])
         as projection on my.Departments;
@@ -30,7 +30,7 @@ service PetitionService
     entity Orders 
         @(restrict: [
             {
-                grant: ['READ', 'WRITE'], to: 'Manager'
+                grant: ['*'], to: 'Manager'
             }
         ])
         as Projection on my.Orders;
