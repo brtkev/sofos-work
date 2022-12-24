@@ -1,0 +1,16 @@
+{
+  "name": "myapp_router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mbt build",
+    "start": "node node_modules/@sap/approuter/approuter.js"
+   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/approuter": "^12.0.3"
+  }
+}

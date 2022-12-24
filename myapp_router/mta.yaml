@@ -1,0 +1,18 @@
+ID: myapp_html5
+_schema-version: "2.1"
+version: 1.0.0
+modules:
+  - name: myapp_app_router
+    type: approuter.nodejs
+    path: .
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: html5_repo_runtime
+resources:
+  - name: html5_repo_runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo

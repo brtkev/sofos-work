@@ -1,0 +1,12 @@
+{
+    "welcomeFile": "/index.html",
+    "authenticationMethod": "none",
+    "routes": [
+        {
+        "source": "^(.*)$",
+        "target": "/myapp/$1",
+        "service": "html5-apps-repo-rt",
+        "authenticationType": "none"
+        }
+]
+}

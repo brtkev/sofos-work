@@ -1,0 +1,1 @@
+(deploy)[https://blogs.sap.com/2021/08/16/deploy-your-appgyver-app-to-the-html5-applications-repository-using-cli-plugin/]
