@@ -363,10 +363,13 @@ ref - [roles y autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_chan
 
 ### appgyver deployment
 
-(here is the tutorial)[https://blogs.sap.com/2021/08/16/deploy-your-appgyver-app-to-the-html5-applications-repository-using-cli-plugin/ ]
+[here is the tutorial](https://blogs.sap.com/2021/08/16/deploy-your-appgyver-app-to-the-html5-applications-repository-using-cli-plugin/)
 
 
 ### Links
 
 this links go down every 24 hours or so, contact me if you want to see them live
 
+[Petition app](https://05e02d6ctrial-dev-myapp-app-router.cfapps.us10-001.hana.ondemand.com/)
+
+[Petition service](https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/)
