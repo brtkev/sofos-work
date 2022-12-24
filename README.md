@@ -360,3 +360,13 @@ Listo ahora el usuario que asignamos podra consumir el servicio de la manera que
 
 ref - [roles y autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_channel=SAPHANAAcademy)
 
+
+### appgyver deployment
+
+(here is the tutorial)[https://blogs.sap.com/2021/08/16/deploy-your-appgyver-app-to-the-html5-applications-repository-using-cli-plugin/ ]
+
+
+### Links
+
+this links go down every 24 hours or so, contact me if you want to see them live
+
