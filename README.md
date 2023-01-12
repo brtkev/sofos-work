@@ -1,3 +1,11 @@
+# Preview
+
+[Request app](https://05e02d6ctrial.launchpad.cfapps.us10.hana.ondemand.com/requestservice.requestapp-1.0.0/)
+
+[Request service](https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/)
+
+this links go down every 24 hours or so, contact me if you want to see them live
+
 # Getting Started
 
 Welcome to your new project.
@@ -25,7 +33,7 @@ File or Folder | Purpose
 Learn more at https://cap.cloud.sap/docs/get-started/.
 
 
-# walkthrough
+# sample walkthrough
 
 ## step 0
 
@@ -363,13 +371,8 @@ ref - [roles y autorization](https://www.youtube.com/watch?v=bRs8KPr5rYo&ab_chan
 
 ### appgyver deployment
 
-[here is the tutorial](https://blogs.sap.com/2021/08/16/deploy-your-appgyver-app-to-the-html5-applications-repository-using-cli-plugin/)
+[here is a sample](https://github.com/GerardoDiaz22/sample-appgyver) made by a coworker
 
 
-### Links
 
-this links go down every 24 hours or so, contact me if you want to see them live
 
-[Petition app](https://05e02d6ctrial-dev-myapp-app-router.cfapps.us10-001.hana.ondemand.com/)
-
-[Petition service](https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/)
