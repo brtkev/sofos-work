@@ -63,7 +63,7 @@ Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
 
 ### get order
 GET https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Orders
-Authorization: Basic kevin.breto@sofoscorp.com:28351815Kev.
+Authorization: Basic kevin.breto@sofoscorp.com:1802Yan.
 
 ### post order
 POST https://05e02d6ctrial-dev-petition-api.cfapps.us10-001.hana.ondemand.com/service/Orders
