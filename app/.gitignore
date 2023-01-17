@@ -1,0 +1,7 @@
+HTML5module/*
+node_modules/
+mta_archives/
+resources/
+# but 
+
+!HTML5module/*.json

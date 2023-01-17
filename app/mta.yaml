@@ -1,0 +1,86 @@
+_schema-version: "3.2"
+ID: request-app
+version: 1.0.0
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install
+
+modules:
+  - name: request-app-destination-content
+    type: com.sap.application.content
+    requires:
+      - name: request-app-uaa
+        parameters:
+          service-key:
+            name: request-app-uaa-key
+      - name: request-app-html5-repo-host
+        parameters:
+          service-key:
+            name: request-app-html5-repo-host-key
+      - name: request-app-destination-service
+        parameters:
+          content-target: true
+    parameters:
+      content:
+        subaccount:
+          destinations:
+          - Authentication: OAuth2UserTokenExchange
+            Name: request-app-uaa
+            ServiceInstanceName: request-app-uaa
+            ServiceKeyName: request-app-uaa-key
+            sap.cloud.service: requestservice
+          - Name: request-app-html5-repo-host
+            ServiceInstanceName: request-app-html5-repo-host
+            ServiceKeyName: request-app-html5-repo-host-key
+            sap.cloud.service: requestservice
+          existing_destinations_policy: update
+    build-parameters:
+      no-source: true
+  - name: request-app-ui-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: request-app-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - HTML5Module-content.zip
+          name: HTML5Module
+          target-path: resources/
+  - name: HTML5Module
+    type: html5
+    path: HTML5Module
+    build-parameters:
+      builder: custom
+      commands:
+      - npm install
+      - npm run build
+      supported-platforms: []
+resources:
+  - name: request-app-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+  - name: request-app-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: true
+        version: 1.0.0
+      service: destination
+      service-plan: lite
+  - name: request-app-html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-name: request-app-html5-repo-host
+      service-plan: app-host

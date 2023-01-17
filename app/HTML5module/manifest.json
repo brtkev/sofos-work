@@ -1,0 +1,50 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "requestapp",
+    "type": "application",
+    "title": "Requests",
+    "description": "AppGyver HTML5 App",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "crossNavigation": {
+      "inbounds": {
+          "intent1": {
+            "signature": {
+                "parameters": {},
+                "additionalParameters": "allowed"
+            },
+            "semanticObject": "Requets",
+            "action": "display",
+            "title": "Requests",
+            "subTitle": "Auto",
+            "icon": "sap-icon://course-book"
+        }
+      }
+    }
+  },
+  "sap.flp": {
+    "type": "application",
+    "config": {
+        "target": {
+            "type": "URL",
+            "url": "./requestservice.requestapp/index.html",
+            "navmode": "inplace",
+            "parameters": {}
+        }
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "requestservice"
+  },
+  "sap.ui": {
+    "technology": "URL",
+    "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+    }
+  }
+}
