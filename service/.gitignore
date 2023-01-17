@@ -1,3 +1,6 @@
+*.http
+*/.env*
+
 # CAP petition-api
 _out
 *.db
